@@ -20,6 +20,11 @@ public class MyUserDetailsService implements UserDetailsService {
     @Autowired
     private UserDAO userRepository;
 
+    /** Obtiene el usuario en la base de datos y carga sus caracteristicas en un objeto UserDetails
+     *
+     * @param username Coleccion de documentos
+     * @return UserDetails object utilizado para realizar la autentificación
+     */
     @Override
     public UserDetails loadUserByUsername(String username) {
         User user = userRepository.findByUsername(username);

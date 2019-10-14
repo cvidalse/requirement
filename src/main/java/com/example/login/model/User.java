@@ -10,6 +10,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    //el parametro authority almacena el nivel de acceso que tiene un usuario
     @Column
     private String authority = "user";
 

@@ -12,9 +12,14 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
+    //se conecta al servicio que obtiene los detalles del usuario
     @Autowired
     private MyUserDetailsService userService;
 
+    /**Configura el nivel de seguridad y quien puede acceder a cada direccion del sistema
+     *
+     * @param http Coleccion de documentos
+     */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
@@ -30,6 +35,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll();
     }
 
+    /**Genera un objeto Autentification contiene la respuesta a la autentificacion
+     *
+     * @param authenticationManagerBuilder Coleccion de documentos
+     *
+     */
     @Override
     public void configure(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
         authenticationManagerBuilder.userDetailsService(userService);
