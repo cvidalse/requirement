@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>Recuperar Contraseña</title>
+<script>
+
+</script>
+</head>
+
+<body>
+
+<div th:if="${existe}">
+    <div style="width: 18rem;">
+        <div class="card-sm-body">
+            <p th:text="${message1}"></p>
+            <p> Contenido del correo a enviar: </p>
+            <p th:text="${message2}"></p>
+        </div>
+    </div>
+</div>
+
+<div th:if="${nexiste}">
+    <div style="width: 18rem;">
+        <div class="card-sm-body">
+            <p>El correo ingresado no existe</p>
+        </div>
+    </div>
+</div>
+
+<div>
+    <form class="form" action="/recovery" method="post">
+
+            <label for="email" class="col-lg-2 col-form-label">Ingrese su email</label><br>
+            <div class="">
+                <input type="email"  id="email" name="email" value="email@example.com"><br>
+                <input type="submit" value="Recuperar contraseña">
+            </div>
+
+
+    </form>
+</div>
+
+</body >
+</html>

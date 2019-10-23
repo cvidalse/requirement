@@ -25,6 +25,7 @@ public class cargaInicial {
             User u1 = new User();
             u1.setUsername("Cristian");
             u1.setPassword("123123");
+            u1.setEmail("email@example.com");
             usuarioDao.save(u1);
         });
 
